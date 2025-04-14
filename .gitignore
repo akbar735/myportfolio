@@ -1,0 +1,56 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django migrations
+*/migrations/
+!*/migrations/__init__.py
+
+# SQLite database
+*.sqlite3
+
+# Media and static files (optional)
+media/
+staticfiles/
+
+# VSCode, PyCharm, and other IDE stuff
+.vscode/
+.idea/
+
+# Environment variables and secrets
+.env
+*.env
+
+# Python virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# macOS & Windows
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Coverage and test reports
+htmlcov/
+.coverage
+.tox/
+.nox/
+.cache
+pytest_cache/
+
+# mypy, pylint, pyright, etc
+.mypy_cache/
+.pyright/
+
+# pip tools
+pip-log.txt
+
+# Node stuff (if using Tailwind or frontend tooling)
+node_modules/
+*initial.py
+resumes
