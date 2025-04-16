@@ -1,0 +1,74 @@
+body {
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+.nav-ele-container{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Default styling */
+.nav-ele-container a {
+    position: relative;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #1a1a1a;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-ele-container a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.25rem;
+    width: 100%;
+    height: 2px;
+    background-color: #0077ff;
+    transform: scaleX(0);
+    transform-origin: left; /* Change this to left for a left-to-right animation */
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-ele-container a.active::after {
+    transform: scaleX(1);
+  }
+  
+  .nav-ele-container a:focus {
+    color: #0077ff;
+  }
+  .nav-ele-container a:hover {
+    color: #0077ff !important; /* Change text color on hover */
+    background-color: rgba(0, 119, 255, 0.1); /* Subtle background color */
+    border-radius: 4px; /* Optional: Add border radius for smooth edges */
+  }
+  /* Visited link styling */
+  .nav-ele-container a:visited {
+    color: #5a5a5a; /* subtle color change for visited links */
+    font-weight: 600;
+  }
+  
+  /* Selected/Active link (current page) */
+  .nav-ele-container a.active {
+    color: #0077ff;  /* active link color */
+  }
+  
+  .nav-ele-container a.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .icon{
+    width: 20px;
+    height: 20px;
+    color: #1a1a1a;
+  }

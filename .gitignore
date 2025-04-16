@@ -54,3 +54,7 @@ pip-log.txt
 node_modules/
 *initial.py
 resumes
+
+# .gitignore
+**/migrations/*.py
+**/migrations/*.pyc

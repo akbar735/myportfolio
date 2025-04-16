@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <img src="{% static 'icons/bars4.svg' %}" alt="icon" class='icon'/>
+        <div class="nav-ele-container">
+            <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+            <a href="{% url 'skills' %}" class="{% if request.path == '/skills/' %}active{% endif %}">Skills</a>
+            <a href="{% url 'projects' %}" class="{% if request.path == '/projects/' %}active{% endif %}">Projects</a>
+            <a href="{% url 'experience' %}" class="{% if request.path == '/experience/' %}active{% endif %}">Experience</a>
+            <a href="{% url 'others' %}" class="{% if request.path == '/others/' %}active{% endif %}">Others</a>
+            <a href="{% url 'contact' %}" class="{% if request.path == '/contact/' %}active{% endif %}">Contact</a>
+        </div>
+    </nav>
+    {% block content %}{% endblock %}
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

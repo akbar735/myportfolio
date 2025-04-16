@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock  %}
+
+{% block content %}
+    <div class = "home">
+        <h3>{{ptf.title}}</h3>
+        <img src={{ptf.photo.url}} />
+    </div>
+{% endblock content %}

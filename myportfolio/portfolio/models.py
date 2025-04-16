@@ -12,12 +12,13 @@ class ExpertiseLevel(models.TextChoices):
     
 class Portfolio(models.Model):
     title = models.CharField(max_length=50)
+    photo = models.ImageField(upload_to='images/', null=True, blank=True)
     intro = models.CharField(max_length=1000)
     resume = models.FileField(upload_to='resumes/', null=True, blank=True)
-    mobile = models.CharField(max_length=20)
-    email = models.CharField(max_length=30)
-    linked_in = models.CharField(max_length=30)
-    github = models.CharField(max_length=30)
+    mobile = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    linked_in = models.CharField(max_length=50)
+    github = models.CharField(max_length=50)
 
     def __str__(self):
         return self.title
@@ -28,14 +29,14 @@ class Skill(models.Model):
     experties = models.CharField(max_length=20, choices=ExpertiseLevel.choices, default=ExpertiseLevel.BEGINNER)
 
     def __str__(self):
-       return f"{self.title} ({self.get_expertise_display()})"
+       return f"{self.title}"
     
 class Project(models.Model):
     portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE, related_name='projects')
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=250)
     start_date = models.DateField()
-    end_date = models.CharField(max_length=50)
+    end_date = models.DateField(null=True, blank=True)
     client_name = models.CharField(max_length=50, null=True, blank=True)
     
     def __str__(self):
@@ -50,7 +51,7 @@ class TechStack(models.Model):
 class InterestedArea(models.Model):
     portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE, related_name='interested_areas', null=True, blank=True)
     title = models.CharField(max_length=50)
-    description = models.CharField(max_length=1000)
+    description = models.CharField(max_length=1000, null=True, blank=True)
 
     def __str__(self):
        return f"{self.title}"
@@ -82,3 +83,14 @@ class Education(models.Model):
     
     def __str__(self):
        return f"{self.course}" 
+    
+class Experience(models.Model):
+    portfolio = models.ForeignKey(Portfolio,on_delete=models.CASCADE, related_name='experience')
+    name = models.CharField(max_length=50)
+    designation = models.CharField(max_length=50)
+    startd_date = models.DateField()
+    end_date = models.DateField(null=True, blank=True)
+
+    def __str__(self):
+       return f"{self.name}" 
+    
