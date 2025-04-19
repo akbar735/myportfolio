@@ -64,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'myportfolio.context_processors.global_constants',
             ],
         },
     },
@@ -125,3 +126,12 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+NAV_LINKS = [
+    {"name": "Home", "url": "home"},
+    {"name": "Skills", "url": "skills"},
+    {"name": "Projects", "url": "projects"},
+    {"name": "Experience", "url": "experience"},
+    {"name": "Others", "url": "others"},
+    {"name": "Contact", "url": "contact"},
+]

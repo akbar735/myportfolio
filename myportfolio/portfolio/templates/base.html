@@ -8,16 +8,31 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
+    <div class= "drawer" id="drawer">
+        <ul>
+            {% for link in NAV_LINKS %}
+                <li class="{% if request.resolver_match.url_name == link.url %}active{% endif %}">
+                    <a href="{% url link.url %}">
+                        {{ link.name }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
     <nav>
-        <img src="{% static 'icons/bars4.svg' %}" alt="icon" class='icon'/>
-        <div class="nav-ele-container">
-            <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">Home</a>
-            <a href="{% url 'skills' %}" class="{% if request.path == '/skills/' %}active{% endif %}">Skills</a>
-            <a href="{% url 'projects' %}" class="{% if request.path == '/projects/' %}active{% endif %}">Projects</a>
-            <a href="{% url 'experience' %}" class="{% if request.path == '/experience/' %}active{% endif %}">Experience</a>
-            <a href="{% url 'others' %}" class="{% if request.path == '/others/' %}active{% endif %}">Others</a>
-            <a href="{% url 'contact' %}" class="{% if request.path == '/contact/' %}active{% endif %}">Contact</a>
+        <div id="drawer-toggler" class='icon-button ml-10'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+            </svg>
         </div>
+        <div class="nav-ele-container">
+            {% for link in NAV_LINKS %}
+                <a href="{% url link.url %}" class="{% if request.resolver_match.url_name == link.url %}active{% endif %}">
+                    {{ link.name }}
+                </a>
+            {% endfor %}
+        </div>
+       
     </nav>
     {% block content %}{% endblock %}
     <script src="{% static 'js/main.js' %}"></script>
