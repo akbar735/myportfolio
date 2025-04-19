@@ -8,8 +8,22 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
+    <div class= "drawer">
+        <ul>
+            <li><a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
+            <li><a href="{% url 'skills' %}" class="{% if request.path == '/skills/' %}active{% endif %}">Skills</a></li>
+            <li><a href="{% url 'projects' %}" class="{% if request.path == '/projects/' %}active{% endif %}">Projects</a></li>
+            <li><a href="{% url 'experience' %}" class="{% if request.path == '/experience/' %}active{% endif %}">Experience</a></li>
+            <li><a href="{% url 'others' %}" class="{% if request.path == '/others/' %}active{% endif %}">Others</a></li>
+            <li><a href="{% url 'contact' %}" class="{% if request.path == '/contact/' %}active{% endif %}">Contact</a></li>
+        </ul>
+    </div>
     <nav>
-        <img src="{% static 'icons/bars4.svg' %}" alt="icon" class='icon'/>
+        <div class='icon-button ml-10'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+            </svg>
+        </div>
         <div class="nav-ele-container">
             <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">Home</a>
             <a href="{% url 'skills' %}" class="{% if request.path == '/skills/' %}active{% endif %}">Skills</a>
@@ -18,6 +32,7 @@
             <a href="{% url 'others' %}" class="{% if request.path == '/others/' %}active{% endif %}">Others</a>
             <a href="{% url 'contact' %}" class="{% if request.path == '/contact/' %}active{% endif %}">Contact</a>
         </div>
+       
     </nav>
     {% block content %}{% endblock %}
     <script src="{% static 'js/main.js' %}"></script>
