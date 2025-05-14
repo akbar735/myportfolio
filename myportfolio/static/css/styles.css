@@ -101,7 +101,63 @@ nav{
   .ml-10{
     margin-left: 10px;
   }
+  .container{
+    display: flex;
+    justify-content: center;
+    margin: 20px 30px;
+  }
+  .default-layout{
+    width: 600px;
+  }
+  .name{
+      color: #5a5a5a;
+      font-weight: normal;
+      margin: 0;
+      margin-bottom: -20px;
+      font-style: oblique;
+      font-family: monospace;
+  }
+  .align-justify{
+    text-align: justify;
+  }
+  .float-right{
+    float: right;
+  }
+  .anchor-primary-button{
+    position: relative;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--primary-color); /* Change text color on hover */
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  .anchor-primary-button:hover{
+    background-color: var(--background-color); /* Subtle background color */
+    border-radius: 4px; /* Optional: Add border radius for smooth edges */
+  }
+  .skills ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
+  .skill-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .skill-container li{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+  } 
+  .skill-container li:hover{
+    cursor: pointer;
+    background-color: var(--background-color);
+  }
 /* For screens 768px and wider (e.g., tablets, desktops) */
 @media (max-width: 768px) {
   .icon-button {
@@ -150,5 +206,7 @@ nav{
     background-color: var(--background-color);  /* active link color */
     color: var(--primary-color);
   }
-  
+  .default-layout{
+    width: 100%;
+  }
 }

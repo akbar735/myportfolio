@@ -3,7 +3,14 @@
 {% block title %}Skills{% endblock  %}
 
 {% block content %}
-    <div class = "skills">
-        <h3>skills</h3>
+    <div class = "skills default-layout">
+        <ul class='skill-container'>
+            {% for skill in  skills %}
+                <li>{{skill}}</li>
+            {% endfor %}
+        </ul>
+         <a class="float-right anchor-primary-button" href="/projects" >
+            Projects
+        </a>
     </div>
 {% endblock content %}

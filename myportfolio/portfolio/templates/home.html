@@ -3,8 +3,12 @@
 {% block title %}Home{% endblock  %}
 
 {% block content %}
-    <div class = "home">
+    <div class = "home default-layout">
+        <h3 class="name">{{ptf.name}}</h3>
         <h3>{{ptf.title}}</h3>
-        <img src={{ptf.photo.url}} />
+        <p class="align-justify"> {{ptf.intro}}</p>
+        <a class="float-right anchor-primary-button" href="/skills" >
+            Skills
+        </a>
     </div>
 {% endblock content %}

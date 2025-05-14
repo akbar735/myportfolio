@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from .models import Portfolio
+from .models import Skill
 # Create your views here.
 def Home(request):
     ptf = Portfolio.objects.first()
     return render(request, 'home.html', {'ptf': ptf})
 
 def Skills(request):
-    return render(request, 'skills.html')
+    skills = Skill.objects.all()
+    return render(request, 'skills.html', {'skills': skills})
 
 def Projects(request):
     return render(request, 'projects.html')

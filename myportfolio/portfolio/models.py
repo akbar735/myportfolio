@@ -12,6 +12,7 @@ class ExpertiseLevel(models.TextChoices):
     
 class Portfolio(models.Model):
     title = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, default='Md Ali Akbar')
     photo = models.ImageField(upload_to='images/', null=True, blank=True)
     intro = models.CharField(max_length=1000)
     resume = models.FileField(upload_to='resumes/', null=True, blank=True)
