@@ -7,11 +7,15 @@ def Home(request):
     return render(request, 'home.html', {'ptf': ptf})
 
 def Skills(request):
-    skills = Skill.objects.all()
+    portfolio = Portfolio.objects.get(id=1)
+    skills = portfolio.skills.all()
     return render(request, 'skills.html', {'skills': skills})
 
 def Projects(request):
-    return render(request, 'projects.html')
+    portfolio = Portfolio.objects.get(id=1)
+    projects = portfolio.projects.prefetch_related('techstack').all()
+
+    return render(request, 'projects.html', {'projects': projects})
 
 def Experience(request):
     return render(request, 'experience.html')
