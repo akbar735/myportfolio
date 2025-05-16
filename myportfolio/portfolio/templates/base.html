@@ -11,8 +11,10 @@
     <div class= "drawer" id="drawer">
         <ul>
             {% for link in NAV_LINKS %}
-                <li class="{% if request.resolver_match.url_name == link.url %}active{% endif %}">
-                    <a href="{% url link.url %}">
+                {#  <li class="{% if request.resolver_match.url_name == link.url %}active{% endif %}">  #}
+                <li>
+                    {#  <a href="{% url link.url %}">  #}
+                    <a class="nav-link" href="#{{ link.url }}"> 
                         {{ link.name }}
                     </a>
                 </li>
@@ -27,14 +29,32 @@
         </div>
         <div class="nav-ele-container">
             {% for link in NAV_LINKS %}
-                <a href="{% url link.url %}" class="{% if request.resolver_match.url_name == link.url %}active{% endif %}">
+                {#  <a href="{% url link.url %}" class="{% if request.resolver_match.url_name == link.url %}active{% endif %}">  #}
+                <a class="nav-link" href="#{{ link.url }}">
                     {{ link.name }}
                 </a>
             {% endfor %}
         </div>
        
     </nav>
-    <div class="container">{% block content %}{% endblock %}</div>
+    <div class="container">
+        {#  Home Page Section  #}
+        <section id="home" class = "home default-layout page-section">
+            <h3 class="name">{{ptf.name}}</h3>
+            <h3>{{ptf.title}}</h3>
+            <p class="align-justify"> {{ptf.intro}}</p>
+        </section>
+        
+        {#  Skill Section  #}
+        <section id="skills" class = "skills default-layout page-section">
+            <ul class='skill-container'>
+                {% for skill in  skills %}
+                    <li>{{skill}}</li>
+                {% endfor %}
+            </ul>
+        
+        </section>
+    </div>
     <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

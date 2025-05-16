@@ -1,12 +1,12 @@
 :root {
-  --primary-color: #0077ff;
-  --background-color: rgba(0, 119, 255, 0.1);
-  --bg-default-color: #f3f3f3;
-  --text-default-color: #1a1a1a;
+  --primary-color: #ffffff;
+  --background-color: rgba(109, 109, 109, 0.228);
+  --bg-default-color: #000000;
+  --text-default-color: #ffffff;
 }
 
 body {
-    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 16px;
     line-height: 1.6;
     color: var(--text-default-color);
@@ -15,13 +15,14 @@ body {
     padding: 0;
 }
 nav{
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 22px rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
+    height: 40px;
+    z-index: 1;
     width: 100%;
 }
 .nav-ele-container{
-    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,30 +56,30 @@ nav{
     display: none;
   }
   
-  .nav-ele-container a.active::after {
+  .nav-link.active::after {
     transform: scaleX(1);
   }
   
-  .nav-ele-container a:focus {
+  .nav-link:focus {
     color: var(--primary-color);;
   }
-  .nav-ele-container a:hover {
+  .nav-link:hover {
     color: var(--primary-color) !important; /* Change text color on hover */
     background-color:var(--background-color); /* Subtle background color */
     border-radius: 4px; /* Optional: Add border radius for smooth edges */
   }
   /* Visited link styling */
-  .nav-ele-container a:visited {
+  .nav-link:visited {
     color: #5a5a5a; /* subtle color change for visited links */
     font-weight: 600;
   }
   
   /* Selected/Active link (current page) */
-  .nav-ele-container a.active {
+  .nav-link.active {
     color: var(--primary-color);  /* active link color */
   }
   
-  .nav-ele-container a.active::after {
+  .nav-link.active::after {
     transform: scaleX(1);
     transform-origin: left;
   }
@@ -102,9 +103,13 @@ nav{
     margin-left: 10px;
   }
   .container{
+    height: calc(100vh - 80px);
+    overflow-y: scroll;
+    scroll-behavior: smooth;
     display: flex;
-    justify-content: center;
-    margin: 20px 30px;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 0px;
   }
   .default-layout{
     width: 600px;
@@ -185,7 +190,7 @@ nav{
     margin-right: 10px;
   }
   .project-container{
-    background-color: white;
+    background-color: var(--background-color);
   }
   .project-container{
     width: 380px;
@@ -210,9 +215,9 @@ nav{
   .drawer{
     display: none; /* hidden by default */
     position: fixed;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 16px rgba(241, 241, 241, 0.2);
     background-color: var(--bg-default-color);
-    width: 220px;
+    width: 160px;
     top: 0;
     left: 0;
     height: 100vh;

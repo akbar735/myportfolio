@@ -129,9 +129,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 NAV_LINKS = [
     {"name": "Home", "url": "home"},
+    {"name": "About", "url": "about"},
     {"name": "Skills", "url": "skills"},
-    {"name": "Projects", "url": "projects"},
-    {"name": "Experience", "url": "experience"},
-    {"name": "Others", "url": "others"},
     {"name": "Contact", "url": "contact"},
 ]
