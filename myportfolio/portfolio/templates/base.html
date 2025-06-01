@@ -40,11 +40,14 @@
     <div class="container">
         {#  Home Page Section  #}
         <section id="home" class = "home default-layout page-section">
+            <img class="profile-photo" src='{{ptf.photo.url}}' />
             <h3 class="name">{{ptf.name}}</h3>
             <h3>{{ptf.title}}</h3>
+        </section>
+         {#  About Page Section  #}
+        <section id="about" class = "about default-layout page-section">
             <p class="align-justify"> {{ptf.intro}}</p>
         </section>
-        
         {#  Skill Section  #}
         <section id="skills" class = "skills default-layout page-section">
             <ul class='skill-container'>

@@ -201,6 +201,14 @@ nav{
   .normal-layout{
     width: 1000px;
   }
+  .page-section{
+    border: 1px solid #ffff;
+  }
+  .profile-photo{
+    width: 100%;
+    object-fit: cover;
+  }
+  
 /* For screens 768px and wider (e.g., tablets, desktops) */
 @media (max-width: 768px) {
   .icon-button {
